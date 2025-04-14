@@ -5,7 +5,7 @@ conn = psycopg2.connect(
     host="localhost",
     database="postgres",
     user="postgres",
-    password=" "
+    password="0123"
 )
 
 cur = conn.cursor()
