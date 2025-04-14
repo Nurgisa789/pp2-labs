@@ -29,7 +29,7 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 score_font = pygame.font.SysFont("Verdana", 20)
-background = pygame.image.load("Road.jpeg")
+background = pygame.image.load("Lab09/racer/Road.jpeg")
 
 
 DISPLAYSURF = pygame.display.set_mode((600, 600))
@@ -39,7 +39,7 @@ pygame.display.set_caption("Racer")
 class coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("coin.png")
+        self.image = pygame.image.load("Lab09/racer/coin.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -52,7 +52,7 @@ class coin(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("Enemy.png")
+        self.image = pygame.image.load("Lab09/racer/Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -70,7 +70,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("Player.jpeg")
+        self.image = pygame.image.load("Lab09/racer/Player.jpeg")
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -128,13 +128,13 @@ while True:
         entity.move()
 
     if pygame.sprite.spritecollideany(P1, coin):
-        pygame.mixer.Sound('eat.ogg').play()
+        pygame.mixer.Sound('Lab09/racer/eat.ogg').play()
         COIN_SCORE += 1
 
 
 
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('eat.ogg').play()
+        pygame.mixer.Sound('Lab09/racer/eat.ogg').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)

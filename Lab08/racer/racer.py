@@ -28,7 +28,7 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 score_font = pygame.font.SysFont("Verdana", 20)
-background = pygame.image.load("images/AnimatedStreet.png")
+background = pygame.image.load("Lab08/racer/AnimatedStreet.png")
 
 # Create a white screen
 DISPLAYSURF = pygame.display.set_mode((600, 600))
@@ -38,7 +38,7 @@ pygame.display.set_caption("Racer 2.0")
 class coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("images/coin.jpeg")
+        self.image = pygame.image.load("Lab08/racer/coin.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -51,7 +51,7 @@ class coin(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("images/Enemy.png")
+        self.image = pygame.image.load("Lab08/racer/Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -69,7 +69,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("images/Player.png")
+        self.image = pygame.image.load("Lab08/racer/Player.jpeg")
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -130,13 +130,13 @@ while True:
         entity.move()
     # Collade with coins
     if pygame.sprite.spritecollideany(P1, coin):
-        pygame.mixer.Sound('sounds/eat.ogg').play()
+        pygame.mixer.Sound('Lab08/racer/eat.ogg').play()
         COIN_SCORE += 1
         # time.sleep(0.5)
 
     # To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('sounds/eat.ogg').play()
+        pygame.mixer.Sound('Lab08/racer/eat.ogg').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)

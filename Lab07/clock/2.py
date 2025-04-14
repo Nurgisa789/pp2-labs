@@ -38,7 +38,7 @@ pygame.display.update()
 
 
 
-music_directory = "music/"
+music_directory = "Lab07/music/"
 music_files = []
 for filename in os.listdir(music_directory):
     if filename.endswith(".mp3"):

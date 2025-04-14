@@ -29,11 +29,11 @@ pygame.draw.rect(screen,GREEN,(20,50,20,20))
 pygame.draw.rect(screen,BLUE,(20,70,20,20))
 pygame.draw.rect(screen,BLACK,(0,90,20,20))
 pygame.draw.rect(screen,PINK,(20,90,20,20))
-erasor = pygame.transform.scale(pygame.image.load("erasor.jpg"), (40, 40))
+erasor = pygame.transform.scale(pygame.image.load("Lab08/paint/erasor.jpg"), (40, 40))
 screen.blit(erasor, [0,110])
-rectangle = pygame.transform.scale(pygame.image.load("Rectangle1.jpg"), (40, 40))
+rectangle = pygame.transform.scale(pygame.image.load("Lab08/paint/erasor.jpg"), (40, 40))
 screen.blit(rectangle, [0,230])
-circle = pygame.transform.scale(pygame.image.load("Circle.jpg"), (40, 40))
+circle = pygame.transform.scale(pygame.image.load("Lab08/paint/Circle.jpg"), (40, 40))
 screen.blit(circle, [0,270])
 
 def roundline(canvas, color, start, end, radius=1) :
@@ -79,7 +79,7 @@ try :
         if e.type == pygame.MOUSEMOTION:
             spot = pygame.mouse.get_pos()
             if draw_on and spot[0] > 60:
-                pygame.draw.circle(screen, color, e.pos, radius)
+                pygame.draw.circle(screen, e.pos, radius)
                 roundline(screen, color, e.pos, last_pos, radius)
             last_pos = e.pos
 

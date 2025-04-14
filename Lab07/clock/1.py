@@ -10,7 +10,7 @@ size = (700, 700)
 pygame.display.set_caption("Mickey Mouse Clock")
 
 
-mickey_image = pygame.image.load("Lab07/images/mickeyclock.jpeg")
+mickey_image = pygame.image.load("Lab07/clock/mickeyclock1.jpeg")
 
 
 center_x = size[0] // 2
