@@ -181,7 +181,7 @@ while True:
     fruit_spawn = True
     game_window.fill(black)
 
-    if score // x + 40:
+    if score >= x + 40:
         snake_speed += 5
         level += 1
         x += 40
